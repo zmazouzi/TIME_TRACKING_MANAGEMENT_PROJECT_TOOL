@@ -1,0 +1,42 @@
+{
+  "name": "ressourceProjects",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "2014": {
+      "type": "object"
+    },"2015": {
+      "type": "object"
+    },"2016": {
+      "type": "object"
+    },
+    "2017": {
+      "type": "object"
+    },
+    "2018": {
+      "type": "object"
+    },
+    "2019": {
+      "type": "object"
+    },
+    "2020": {
+      "type": "object"
+    },
+    "ressourceId": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "ressource": {
+      "type": "belongsTo",
+      "model": "ressource",
+      "foreignKey": "ressourceId"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

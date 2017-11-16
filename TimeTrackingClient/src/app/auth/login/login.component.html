@@ -1,0 +1,92 @@
+
+
+
+
+<div class="container"
+     fxLayout
+
+     fxLayoutAlign="center"
+     fxLayoutGap="10px"
+>
+  <div  fxFlex="40%"></div>
+  <div  fxFlex="30%" >
+
+
+    <md-toolbar class="toolbar" color="primary">
+
+      SIGN IN
+    </md-toolbar>
+    <md-card>
+
+
+      <md-card-content>
+
+        <!--<h3> sign in with you email </h3>-->
+
+        <form    [formGroup]="loginForm" (ngSubmit)="onLogin(loginForm.value)" >
+
+
+          <md-input-container class="full-width">
+            <span mdPrefix><i class="fa fa-user-circle fa-lg" aria-hidden="true"></i>&nbsp;</span>
+            <input mdInput placeholder="Email"   formControlName="email">
+
+          </md-input-container>
+          <br>
+
+          <md-input-container class="full-width">
+            <span mdPrefix><i class="fa fa-lock fa-lg" aria-hidden="true"></i>&nbsp;</span>
+            <input mdInput placeholder=" Password" type="password" formControlName="password">
+
+          </md-input-container>
+          <br>
+
+
+
+          <div fxLayout="row">
+
+            <div fxFlex="40%">
+              <button md-button>
+                FORGOT PASSWORD ?
+              </button>
+            </div>
+            <div fxFlex="40%">
+
+            </div>
+            <div fxFlex="25%">
+              <button md-raised-button color="primary" type="submit" > SIGN IN  </button>
+            </div>
+
+
+
+          </div>
+          <br>
+
+          <hr >
+
+          <div  fxLayout="row" >
+
+            <div fxFlex="25%"></div>
+            <div fxFlex="50%">
+              <button md-button routerLink="/Register" > NEED AN ACCOUNT ? </button>
+            </div>
+            <div fxFlex="25%"></div>
+
+
+          </div>
+
+
+        </form>
+
+
+
+      </md-card-content>
+
+    </md-card>
+
+
+  </div>
+  <div  fxFlex="40%">
+
+
+  </div>
+</div>

@@ -1,0 +1,94 @@
+{
+  "name": "ressource",
+  "base": "User",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "companyId": {
+      "type": "string"
+    },
+    "phone": {
+      "type": "number"
+    },
+    "HiringDate": {
+      "type": "date"
+    },
+    "ContractType": {
+      "type": "string"
+    },
+    "WHPerMonth": {
+      "type": "number"
+    },
+    "CostPH": {
+      "type": "number"
+    },
+    "salary": {
+      "type": "number"
+    },
+    "isProjectManager": {
+      "type": "boolean",
+      "required": "false",
+      "default": false
+    }
+  },
+  "validations": [],
+  "relations": {
+    "company": {
+      "type": "belongsTo",
+      "model": "company",
+      "foreignKey": ""
+    },
+    "ressourceProjects": {
+      "type": "hasMany",
+      "model": "ressourceProjects",
+      "foreignKey": "ressourceId"
+    }
+  },
+  "acls": [
+    {
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW",
+      "property": "__create__ressourceProjects"
+    },
+    {
+      "principalType": "ROLE",
+      "principalId": "company",
+      "permission": "ALLOW",
+      "property": "__get__ressourceProjects"
+    },
+    {
+      "principalType": "ROLE",
+      "principalId": "$owner",
+      "permission": "ALLOW",
+      "property": "__updateById__ressourceProjects"
+    },
+    {
+      "principalType": "ROLE",
+      "principalId": "$owner",
+      "permission": "ALLOW",
+      "property": "__get__ressourceProjects"
+    },
+    {
+      "principalType": "ROLE",
+      "principalId": "$owner",
+      "permission": "ALLOW",
+      "property": "__delete__ressourceProjects"
+    },
+    {
+      "principalType": "ROLE",
+      "principalId": "$owner",
+      "permission": "ALLOW",
+      "property": "__findById__ressourceProjects"
+    },
+    {
+      "principalType": "ROLE",
+      "principalId": "$owner",
+      "permission": "ALLOW",
+      "property": "__destroyById__ressourceProjects"
+    }
+  ],
+  "methods": {}
+}

@@ -1,0 +1,37 @@
+
+<div class="demo">
+
+
+  <div>
+    <h2 class="mat-h2"> CHOOSE A PROJECT</h2>
+
+    <form class="example-form">
+      <md-form-field class="example-full-width">
+        <input type="text" placeholder="Project ID is : " aria-label="Number" mdInput [formControl]="myControl" [mdAutocomplete]="auto">
+        <md-autocomplete #auto="mdAutocomplete">
+          <md-option *ngFor="let project of listProjects" [value]="project.id" (onSelectionChange)="onSelectProject($event)">
+            {{ project.title }}
+          </md-option>
+        </md-autocomplete>
+      </md-form-field>
+    </form>
+
+
+
+    <h2 class="mat-h2"> ASSIGN RESSOURCES </h2>
+
+    <md-nav-list >
+      <a md-list-item  *ngFor="let ressource of listRessources"  >
+        <a (click)="onSelectRessource(ressource)" ><md-checkbox ></md-checkbox></a>
+        <span md-line>{{ ressource.username }}</span>
+        <span md-line class="demo-secondary-text"> {{ ressource.email }} </span>
+      </a>
+    </md-nav-list>
+
+    <div fxLayout="row-reverse">
+
+      <button [disabled]="isValid()" md-raised-button color="primary" (click)="OnAssignRessorces()"> VALIDATE  </button>
+    </div>
+
+</div>
+</div>

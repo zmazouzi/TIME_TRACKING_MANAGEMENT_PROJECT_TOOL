@@ -1,0 +1,87 @@
+
+
+
+
+
+
+<h2 class="mat-h2"> CREATE A RESSOURCE </h2>
+
+
+<form [formGroup]="ressourceForm" (ngSubmit)="onCreateRessource(ressourceForm.value)">
+
+
+  <div>
+
+    <md-form-field class="full-width">
+      <input mdInput placeholder="Username"  formControlName="username">
+      <md-error >
+        username is  <strong>required</strong>
+      </md-error>
+    </md-form-field>
+
+
+    <md-form-field class="full-width">
+      <input mdInput placeholder="Email"  formControlName="email">
+      <md-error >
+        email is  <strong>required</strong>
+      </md-error>
+    </md-form-field>
+
+
+
+    <md-form-field class="full-width">
+      <input mdInput [mdDatepicker]="picker" placeholder="Choose Hiring Date"  (dateChange)="onChange1($event)"  >
+      <md-datepicker-toggle mdSuffix [for]="picker"></md-datepicker-toggle>
+      <md-datepicker #picker></md-datepicker>
+    </md-form-field>
+
+
+    <md-select placeholder="Contract type" class="full-width" formControlName="ContractType" >
+      <md-option *ngFor="let elem of ContractTypes" [value]="elem.value">
+        {{elem.viewValue}}
+      </md-option>
+    </md-select>
+
+
+
+    <md-form-field class="full-width" >
+      <input mdInput placeholder="WHPerMonth" formControlName="WHPerMonth" >
+      <md-error >
+        WHPerMonth is <strong>required</strong>
+      </md-error>
+    </md-form-field>
+
+    <md-form-field class="full-width">
+      <input mdInput placeholder="CostPH"  formControlName="CostPH">
+
+    </md-form-field>
+
+
+    <md-form-field class="full-width">
+      <input mdInput placeholder="salary"  formControlName="salary">
+      <md-error >
+        Salary is   <strong>required</strong>
+      </md-error>
+    </md-form-field>
+
+
+    <md-form-field class="full-width">
+      <input type="password" mdInput placeholder="Password"  formControlName="password">
+      <md-error >
+       Password is   <strong>required</strong>
+      </md-error>
+    </md-form-field>
+
+
+
+
+  </div>
+  <div fxLayout="row-reverse">
+    <button [disabled]="!ressourceForm.valid" type="submit" md-raised-button color="primary" > VALIDATE </button>
+  </div>
+
+
+
+</form>
+
+

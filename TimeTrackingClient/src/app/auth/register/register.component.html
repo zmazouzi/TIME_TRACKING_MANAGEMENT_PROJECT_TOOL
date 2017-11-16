@@ -1,0 +1,92 @@
+
+
+
+<div class="container"
+     fxLayout
+     fxLayoutAlign="center"
+     fxLayoutGap="10px">
+  <div class="item item-1" fxFlex="35%"></div>
+  <div class="item item-2" fxFlex="30%" >
+
+
+
+    <md-toolbar color="primary">
+
+      register !
+    </md-toolbar>
+
+    <md-card >
+      <md-card-content>
+
+        <form [formGroup]="registerForm" (ngSubmit)="onRegister(registerForm.value)"  >
+
+
+          <md-input-container class="full-width">
+            <span mdPrefix><i class="fa fa-user-circle fa-lg" aria-hidden="true"></i>&nbsp;</span>
+            <input mdInput placeholder="CompanyName" formControlName="companyName">
+
+          </md-input-container>
+          <br>
+
+          <md-input-container class="full-width">
+            <span mdPrefix><i class="fa fa-user-circle fa-lg" aria-hidden="true"></i>&nbsp;</span>
+            <input mdInput placeholder="Email" formControlName="email">
+
+          </md-input-container>
+          <br>
+
+          <md-input-container class="full-width">
+            <span mdPrefix><i class="fa fa-lock fa-lg" aria-hidden="true"></i>&nbsp;</span>
+            <input mdInput placeholder=" Password" type="password" formControlName="password">
+
+          </md-input-container>
+          <br>
+
+          <md-input-container class="full-width">
+            <span mdPrefix>+212 &nbsp;</span>
+            <input mdInput type="tel" placeholder="phoneNumber" formControlName="phoneNumber">
+          </md-input-container>
+
+          <br>
+
+
+          <md-input-container class="full-width">
+            <span mdPrefix><i class="fa  fa-location-arrow fa-lg" aria-hidden="true"></i>&nbsp; &nbsp;</span>
+            <input mdInput placeholder="address" formControlName="address">
+          </md-input-container>
+
+          <br>
+
+          <div fxLayout="row-reverse">
+            <button md-raised-button color="primary" type="submit" > Register</button>
+          </div>
+
+
+        </form>
+
+      </md-card-content>
+    </md-card>
+
+
+
+
+  </div>
+  <div class="item item-2" fxFlex="35%" ></div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,54 @@
+{
+  "name": "project",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "ownerId": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "client": {
+      "type": "string"
+    },
+    "payedWH": {
+      "type": "number"
+    },
+    "totalBudget": {
+      "type": "number"
+    },
+    "status": {
+      "type": "string"
+    },
+    "startDate": {
+      "type": "string"
+    },
+    "endDate": {
+      "type": "string"
+    },
+    "ressources": {
+      "type": [
+        "string"
+      ],
+      "required": false,
+      "default": []
+    }
+  },
+  "validations": [],
+  "relations": {
+    "company": {
+      "type": "belongsTo",
+      "model": "company",
+      "foreignKey": "ownerId"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

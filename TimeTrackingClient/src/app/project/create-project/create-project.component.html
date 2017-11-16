@@ -1,0 +1,85 @@
+
+
+
+
+
+
+<h1 class="mat-display-1"> CREATE A PROJECT </h1>
+
+
+<form [formGroup]="projectForm" (ngSubmit)="onCreateProject(projectForm.value)">
+
+
+  <div>
+
+    <md-form-field class="full-width">
+      <input mdInput placeholder="Title"  formControlName="title">
+      <md-error >
+        Title is <strong>required</strong>
+      </md-error>
+    </md-form-field>
+
+
+    <md-form-field class="full-width">
+      <textarea mdInput  #description maxlength="256" formControlName="description" placeholder="Description"  cols="30" rows="6"></textarea>
+      <md-hint align="start"><strong>Please type details about the project </strong> </md-hint>
+      <md-hint align="end">{{description.value.length}} / 256</md-hint>
+      <md-error >
+        Description is  <strong>required</strong>
+      </md-error>
+    </md-form-field>
+
+
+    <md-form-field class="full-width" >
+      <input mdInput placeholder="Client" formControlName="client" >
+      <md-error >
+        Client name is <strong>required</strong>
+      </md-error>
+    </md-form-field>
+
+    <md-form-field class="full-width">
+      <input mdInput placeholder="payedWH"  formControlName="payedWH">
+
+    </md-form-field>
+
+
+    <md-form-field class="full-width">
+      <input mdInput placeholder="totalBudget"  formControlName="totalBudget">
+      <md-error >
+       total budget is   <strong>required</strong>
+      </md-error>
+    </md-form-field>
+
+
+    <md-select placeholder="Project status" class="full-width" formControlName="status" >
+      <md-option *ngFor="let elem of status" [value]="elem.value">
+        {{elem.viewValue}}
+      </md-option>
+    </md-select>
+
+
+
+    <md-form-field class="full-width">
+      <input mdInput [mdDatepicker]="picker" placeholder="Choose a start date"  (dateChange)="onChange1($event)"  >
+      <md-datepicker-toggle mdSuffix [for]="picker"></md-datepicker-toggle>
+      <md-datepicker #picker></md-datepicker>
+    </md-form-field>
+
+
+    <md-form-field class="full-width">
+      <input mdInput [mdDatepicker]="picker1" placeholder="Choose a start date"  (dateChange)="onChange2($event)"  >
+      <md-datepicker-toggle mdSuffix [for]="picker1"></md-datepicker-toggle>
+      <md-datepicker #picker1></md-datepicker>
+    </md-form-field>
+    <md-divider></md-divider>
+
+  </div>
+  <div fxLayout="row-reverse">
+    <button [disabled]="!projectForm.valid" type="submit" md-raised-button color="primary" > VALIDATE </button>
+  </div>
+
+
+
+</form>
+
+

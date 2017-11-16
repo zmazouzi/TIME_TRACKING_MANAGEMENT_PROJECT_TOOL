@@ -1,0 +1,34 @@
+.demo {
+  display: flex;
+  flex-flow: row wrap;
+
+.mat-list, .mat-nav-list {
+  //border: 1px solid rgba(0, 0, 0, 0.12);
+  width: 100%;
+  margin: 5px 5px 0 0;
+
+}
+h2 {
+  margin-top: 20px;
+}
+
+
+.mat-list-icon {
+  color: white;
+  background: rgba(0, 0, 0, 0.3);
+}
+}
+
+.demo-secondary-text {
+  color: rgba(0, 0, 0, 0.54);
+}
+
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.example-full-width {
+  width: 100%;
+}

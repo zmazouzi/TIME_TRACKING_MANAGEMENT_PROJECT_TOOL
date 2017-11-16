@@ -1,0 +1,64 @@
+
+
+<md-toolbar color="primary" fullScreen >
+
+
+  <span  ><button *ngIf="isLoggedIn()"  type="button"  md-icon-button (click)="start.toggle()" >
+          <md-icon >menu</md-icon>
+        </button>
+
+       </span>
+
+  <span>
+
+    <button md-raised-button color="primary" *ngIf="!isLoggedIn()" routerLink="/Register" >
+    REGISTER
+  </button>
+    <!-- *ngIf="!isLoggedIn()" -->
+    <button md-raised-button color="primary" *ngIf="!isLoggedIn()" routerLink="/login" >
+
+    LOGIN
+  </button>
+
+<button md-raised-button color="primary" *ngIf="isLoggedIn()" routerLink="/login" (click)="onLogOut()"   >
+
+  LOG OUT
+
+</button>
+
+
+
+  </span>
+
+</md-toolbar>
+
+
+
+<!--sidenav-->
+
+<md-sidenav-container class="demo-sidenav-container">
+  <md-sidenav #start style="width: 180px "   mode="side">
+    <md-nav-list>
+
+
+
+      <a md-list-item  > Company profile </a>
+      <h3 mdSubheader style=" background-color: dimgrey; color: white"  > Buisness  </h3>
+
+      <a md-list-item routerLink="/Project" > Porjects </a>
+      <a md-list-item routerLink="/Ressource" >Ressources</a>
+
+      <md-divider></md-divider>
+      <h3 mdSubheader style=" background-color: dimgrey; color: white" >Logs </h3>
+
+
+    </md-nav-list>
+  </md-sidenav>
+
+  <div class="demo-sidenav-content" style="background-color: whitesmoke">
+
+    <router-outlet></router-outlet>
+
+
+  </div>
+</md-sidenav-container>

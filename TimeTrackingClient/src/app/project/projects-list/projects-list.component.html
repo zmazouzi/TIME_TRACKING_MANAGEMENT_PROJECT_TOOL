@@ -1,0 +1,42 @@
+
+
+
+<div fxLayout="row">
+  <div fxFlex="2%"></div>
+  <div fxFlex="96%">
+    <md-toolbar color="primary"  >
+
+       <span >LIST OF PROJECTS </span>
+       <button md-button (click)="openDialog()" ><md-icon>add </md-icon> ADD PROJECT </button>
+
+
+    </md-toolbar>
+    <md-card style="height: 400px ">
+
+
+      <div ag-grid="gridOptions" class="ag-theme-material">
+        <ag-grid-angular #agGrid style="width: 100%; height: 200px;"
+                         [gridOptions]="gridOptions"
+                         enableColResize
+                         enableSorting
+                         enableFilter
+                         groupHeaders
+                         toolPanelSuppressGroups
+                         toolPanelSuppressValues
+                         rowHeight="22"
+                         rowSelection="single"
+
+
+        >
+        </ag-grid-angular>
+
+
+      </div>
+
+
+    </md-card>
+  </div>
+  <div fxFlex="2%"></div>
+</div>
+
+

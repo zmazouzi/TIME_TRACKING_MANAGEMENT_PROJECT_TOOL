@@ -1,0 +1,52 @@
+
+
+
+<div fxLayout="row">
+  <div fxFlex="2%"></div>
+  <div fxFlex="96%">
+    <md-toolbar color="primary"  >
+
+      <span >LIST OF RESSOURCES </span>
+      <span>
+        <button md-button (click)="openDialog1()" ><md-icon>add </md-icon> SELECT RESSOURCES </button>
+
+        <button md-button (click)="openDialog()" ><md-icon>add </md-icon> ADD RESSOURCE </button>
+      </span>
+
+    </md-toolbar>
+    <md-card style="height: 220px ">
+
+
+
+      <div ag-grid="gridOptions" class="ag-blue">
+        <ag-grid-angular #agGrid style="width: 100%; height: 200px" class="ag-blue"
+                         [gridOptions]="gridOptions"
+                         enableColResize
+                         enableSorting
+                         enableFilter
+                         groupHeaders
+                         toolPanelSuppressGroups
+                         toolPanelSuppressValues
+                         rowHeight="22"
+                         rowSelection="single"
+
+
+        >
+        </ag-grid-angular>
+
+
+      </div>
+
+
+    </md-card>
+
+    <md-toolbar color="primary" style="margin-top: 10px">
+      <span>ASSIGN RESSOURCES</span>
+
+
+    </md-toolbar>
+    <md-card style="height: 40px"></md-card>
+
+  </div>
+  <div fxFlex="2%"></div>
+</div>
